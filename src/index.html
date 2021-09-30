@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Bootstrap -->
+  <link rel="icon" href="favicon.ico" type="image/icon">
+  <title>ToDo list</title>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1 class="title">ToDo list</h1>
+
+    <form class="form-row" id="form_note">
+      <div class="col-sm-9">
+        <textarea class="form-control" id="note_inp" type="text" name="Text1" rows="3"
+          placeholder="Input text..."></textarea>
+      </div>
+      <div class="input-btns col-sm-3">
+        <button class="btn btn-primary btn-lg" id="note_btn" type="submit" disabled>To send</button>
+      </div>
+    </form>
+
+    <hr>
+
+    <div class="settings container form-row">
+
+      <div class="col-sm-4">
+        <button type="button" class="btn-reg btn-setting btn btn-outline-primary" id="auth_btn" data-toggle="modal"
+          data-target="#myModal">
+          Registration
+        </button>
+      </div>
+      <!-- The Modal -->
+      <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Registration</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+              <form class="need-validated" id="auth">
+                <div class="form-group">
+                  <label for="email">E-mail:</label>
+                  <input type="text" class="form-control" id="email" placeholder="Enter username" name="uname" required>
+                  <div class="valid-feedback">Valid.</div>
+                  <div class="invalid-feedback">Please fill out this field.</div>
+                </div>
+                <div class="form-group">
+                  <label for="pwd">Password:</label>
+                  <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd"
+                    required>
+                  <div class="valid-feedback">Valid.</div>
+                  <div class="invalid-feedback">Please fill out this field.</div>
+                </div>
+                <button type="submit" class="btn btn-primary">Register</button>
+              </form>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <button class="sort-btn btn-setting btn btn-outline-info" type="button" id="sortButton">
+          Sort notes
+        </button>
+      </div>
+
+      <div class="col-sm-4">
+        <input class="form-control" id="search" type="text" placeholder="Search notes">
+      </div>
+
+    </div>
+
+    <hr>
+
+    <div class="list" id="list"></div>
+
+  </div>
+
+</body>
+
+</html>
