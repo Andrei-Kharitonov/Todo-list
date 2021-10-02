@@ -13,7 +13,8 @@ import { search } from "@js/search"
 
 
 window.addEventListener("load", Note.renderList)
-$(window).on("load", Note.delNote)
+$(window).on("load", Note.delete)
+$(window).on("load", Note.completed)
 $("#form_note").on("submit", submitFormHandler)
 $("#auth").on("submit", authFormHandler)
 $("#sortButton").on("click", sortNotes)
@@ -35,7 +36,8 @@ function submitFormHandler(event) {
 
     let note = {
       text: $("#note_inp").val(),
-      date: new Date().toJSON()
+      date: new Date().toJSON(),
+      completed: false
     }
 
     // Async request to server to save note
