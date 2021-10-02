@@ -41,6 +41,8 @@ export class Note {
 
       if (confirm("Delete this note?")) {
         $(`#${noteId}`).hide(200)
+        setTimeout(() => { $(`#${noteId}`).remove() }, 200)
+
         let notes = getNoteFromLocalStorage()
         let filtered = notes.filter(notes => notes.id !== noteId)
         localStorage.setItem("notes", JSON.stringify(filtered))
